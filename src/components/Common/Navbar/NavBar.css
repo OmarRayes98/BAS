@@ -2,9 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4.37rem;
+  padding: 2.5rem 4.37rem;
   background-color: transparent;
-  height: 7.3125rem;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -14,7 +13,7 @@
 }
 @media screen and (width < 992px) {
   .aj-navbar {
-    padding: 0 1.25rem;
+    padding: 2.5rem 1.25rem;
   }
 }
 .aj-navbar-menu{
@@ -38,7 +37,7 @@
 
 
   color: var(--white-color, #FFFBFE);
-  font-family: Montserrat;
+  font-family: var(--font-family);
   font-style: normal;
   line-height: 131%;
   font-weight: 400;
@@ -47,7 +46,7 @@
 }
 .aj-navbar-links li a:hover {
   opacity: 1;
-  font-size: 1rem;
+  font-size: var(--text-font-size);
   line-height: 141.4%; 
   border-bottom: 1px solid var(--white-color);
   font-weight: 500;
@@ -55,7 +54,7 @@
 }
 .aj-navlink-active {
   opacity: 1 !important;
-  font-size: 1rem !important;
+  font-size: var(--text-font-size) !important;
   line-height: 141.4% !important; 
   border-bottom: 1px solid var(--white-color);
   font-weight: 500 !important;
@@ -68,11 +67,11 @@
   align-items: flex-start;
   gap: 0.625rem;
   border-radius: 0.125rem;
-  background: var(--White, #FFFBFE);
+  background: var(--white-color, #FFFBFE);
   border: none;
   cursor: pointer;
-  color: var(--Black, #1C1B1F);
-  font-family: Montserrat;
+  color: var(--black-color, #1C1B1F);
+  font-family: var(--font-family);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 500;
@@ -147,7 +146,7 @@
 .aj-sidebar ul li a {
   text-decoration: none;
   color: var(--white-color, #FFFBFE);
-  font-family: Montserrat;
+  font-family: var(--font-family);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
@@ -176,7 +175,7 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--white-color, #FFFBFE);
-  font-family: Montserrat;
+  font-family: var(--font-family);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;

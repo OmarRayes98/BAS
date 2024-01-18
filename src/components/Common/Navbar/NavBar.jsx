@@ -112,7 +112,7 @@ const NavBar = () => {
         </div>
       </div>
       {/* overlay */}
-      <div className={overlayActive}></div>
+      <div onClick={navToggle} className={overlayActive}></div>
     </>
   )
 }

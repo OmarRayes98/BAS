@@ -1,6 +1,6 @@
 .aj-hero {
   height: 40.5625rem;
-  background: var(--Black, #1C1B1F);
+  background: var(--black-color, #1C1B1F);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -20,9 +20,9 @@
   z-index: 0;
 }
 .aj-hero-text h1 {
-  color: #FFFBFE;
+  color: var(--white-color);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
+  font-family: var(--font-family);
   font-size: 3.8125rem;
   font-style: normal;
   font-weight: 800;
@@ -36,8 +36,8 @@
   }
 }
 .aj-hero-text p {
-  color: var(--White, #FFFBFE);
-  font-family: Montserrat;
+  color: var(--white-color, #FFFBFE);
+  font-family: var(--font-family);
   font-size: 2.5rem;
   font-style: normal;
   font-weight: 300;
@@ -75,9 +75,9 @@
   gap: 8px;
 }
 .aj-hero-info p {
-  color: var(--White, #FFFBFE);
-  font-family: Montserrat;
-  font-size: 20px;
+  color: var(--white-color, #FFFBFE);
+  font-family: var(--font-family);
+  font-size: var(--title-font-size);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
