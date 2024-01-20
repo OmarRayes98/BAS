@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+src/components/Home/SpecialComponentFor_Home_page/Reviews/
+src/components/Home/SpecialComponentFor_Home_page/FAQs/
+src/components/Home/SpecialComponentFor_Home_page/WhatWeDo/
+src/components/Home/SpecialComponentFor_Home_page/WhoWeAre/
+src/assets/icons/life-coaching.svg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

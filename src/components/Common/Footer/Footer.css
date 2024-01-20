@@ -1,7 +1,6 @@
 .aj-footer {
   background-color: var(--black-color);
   position: relative;
-  z-index: -1;
 }
 @media screen and (max-width: 991px) {
   .aj-footer-container {
@@ -35,9 +34,10 @@
   align-items: center;
   gap: 2rem;
 }
-@media screen and (max-width: 991px){
+@media screen and (width < 992px){
   .aj-logo-icons {
     order: 1;
+    gap: 1rem;
   }
 }
 .aj-logo-frame {
@@ -53,10 +53,29 @@
 .aj-logo-frame p {
   color: var(--white-color, #FFFBFE);
   font-family: var(--font-family);
-  font-size: 0.813rem;
+  font-size: 0.8125rem;
   font-style: normal;
   font-weight: 400;
   line-height: 141.4%;
+}
+.aj-icons-group {
+  display: flex;
+  gap: 15px;
+}
+.aj-icons-group svg {
+  width: 1.875rem;
+  height: 1.875rem;
+  flex-shrink: 0;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  padding: 4px;
+  cursor: pointer;
+}
+@media screen and (width < 992px) {
+  .aj-icons-group svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .aj-newsletter {
@@ -157,6 +176,11 @@
   align-items: center;
   gap: 18px;
 }
+@media screen and (width < 992px) {
+  .aj-footer-contact {
+    gap: 1rem;
+  }
+}
 .aj-footer-contact-header {
   display: flex;
   flex-direction: column;
@@ -180,6 +204,14 @@
   font-weight: 400;
   line-height: 141.4%;
 }
+@media screen and (width < 992px) {
+  .aj-footer-contact-header p:last-child {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
 .aj-footer-contact-info {
   width: 125px;
   height: 50px;
@@ -188,6 +220,11 @@
   align-items: center;
   flex-shrink: 0;
   gap: 8px;
+}
+@media screen and (width < 992px) {
+  .aj-footer-contact-info {
+    gap: 1rem;
+  }
 }
 .aj-footer-contact-info p a {
   color: #FFF;
@@ -198,6 +235,12 @@
   line-height: 131%;
   letter-spacing: -0.48px;
   text-decoration: none;
+}
+@media screen and (width < 992px){
+  .aj-footer-contact-info p a {
+    font-size: 0.875rem;
+    line-height: normal;
+  }
 }
 .aj-footer-line {
   width: 100%;
