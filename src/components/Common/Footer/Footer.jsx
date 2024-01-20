@@ -1,9 +1,8 @@
 
 import './Footer.css'
 import { FaFacebookF } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
-
+import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
                 <FaFacebookF />
               </a>
               <a href="#">
-                <FaInstagram />
+                <AiFillInstagram />
               </a>
               <a href="#">
                 <FaLinkedinIn />
