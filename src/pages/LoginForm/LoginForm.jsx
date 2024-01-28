@@ -1,19 +1,18 @@
-import LayoutAuth from '../LayoutAuth/LayoutAuth';
 import './LoginForm.css';
 import Button from '../../components/Common/Button/Button';
 import HeaderForm from '../../components/LoginForm/HeaderForm/HeaderForm';
 
 import InputText from '../../components/Common/InputText/InputText';
+import { Link } from 'react-router-dom';
 
 
 
 const LoginForm = () => {
   return (
 
-    <LayoutAuth>
     <div className="app-wrapper">
 
-    <HeaderForm title={"login"} subtitle={"welcome back"} />
+  <HeaderForm title={"login"} subtitle={"welcome back"} />
 
 
     <form className='form-wrapper'>
@@ -34,7 +33,7 @@ const LoginForm = () => {
 
     <div className='form-footer'>
 
-      <a className='footer-forgot' href="#">forgot password?</a>
+      <Link className='footer-forgot' to="forget-password">forgot password?</Link>
       <p className='footer-account'>
       Don’t have an account ?
         <a href="#">Contact us</a>
@@ -43,7 +42,7 @@ const LoginForm = () => {
     </div> 
 
     </div>
-</LayoutAuth>
+
 
   )
 }

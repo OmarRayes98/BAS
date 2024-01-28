@@ -1,3 +1,45 @@
-//will write routes here for navigations by react-route-dom 
-const routes =[]
-console.log(routes);
+import AuthLayout from "../layout/authLayout";
+import MainLayout from "../layout/mainLayout";
+import ForgotPasswordForm from "../pages/ForgotPasswordForm/ForgotPasswordForm";
+
+import Home from "../pages/Home/Home";
+import LoginForm from "../pages/LoginForm/LoginForm";
+import ProfileCompany from "../pages/ProfileCompany";
+import StudyCase from "../pages/StudyCase/StudyCase";
+
+export const routes = [
+    {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "case-study",
+          element: <StudyCase />,
+        },
+        {
+          path: "profile-company/:id",
+          element: <ProfileCompany />,
+        },
+      ],
+    },
+    {
+      path:"/auth",
+      element: <AuthLayout/>,
+      children:[
+        {
+          path: "",
+          element: <LoginForm />,
+        },
+        {
+          path: "forget-password",
+          element: <ForgotPasswordForm />,
+        },
+
+      ],
+    }
+  ];
+  
