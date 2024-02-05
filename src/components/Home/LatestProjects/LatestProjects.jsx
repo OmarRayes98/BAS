@@ -1,8 +1,8 @@
 import Slider from 'react-slick';
 import SectionHeader from '../SectionHeader/SectionHeader'
 import './LatestProjects.css'
-  import pag from './../../../../assets/icons/pagination.svg'
-  import pag2 from './../../../../assets/icons/pagination-disabled.svg'
+  // import pag from './../../../../assets/icons/pagination.svg'
+  // import pag2 from './../../../../assets/icons/pagination-disabled.svg'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

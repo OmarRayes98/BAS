@@ -1,5 +1,5 @@
-import Hero from '../../components/Home/SpecialComponentFor_Home_page/Hero/Hero';
-import Partners from '../../components/Home/SpecialComponentFor_Home_page/Partners/Partners';
+import Hero from '../../components/Common/Hero/Hero';
+import Partners from '../../components/Home/Partners/Partners';
 import heroImage from '../../assets/img/Group 427319036.svg'
 
 import './StudyCase.css';
