@@ -11,19 +11,39 @@ import Reviews from '../../components/Home/Reviews/Reviews'
 import FAQs from '../../components/Home/FAQs/FAQs'
 import OurTeam from '../../components/Home/OutTeam/OurTeam'
 import ContactUs from '../../components/Home/ContactUs/ContactUs'
+import { useDispatch, useSelector } from 'react-redux'
+import {fetchServices,fetchReviews,fetchFAQ,fetchTeam} from '../../redux/mainSlice/main.action';
+import { useEffect } from 'react'
+import { fetchProjects } from '../../redux/latestProject/latestProject.action'
 
 const Home = () => {
+
+    const dispatch = useDispatch();
+    const {services,loadingService,reviews,loadingReview,faqArray,loadingFaq ,team,loadingTeam,latestProject,loadingLatestProject} = useSelector((state) => state.mainSlice);
+
+    useEffect(()=>{
+
+        dispatch(fetchServices());
+        dispatch(fetchReviews());
+        dispatch(fetchFAQ());
+        dispatch(fetchTeam());
+        dispatch(fetchProjects());
+
+
+    },[dispatch])
+
+
 
     return (
         <div className='home'>
             <Hero title="Black Analysis Solution" text="Leave it to us" heroImage={heroImage}/>
-            <WhatWeDo />
+            <WhatWeDo services={services} loadingService={loadingService} />
             <WhoWeAre />
-            <LatestProjects img={FocalImg}/>
-            <Reviews />
-            <FAQs />
+            <LatestProjects loadingLatestProject={loadingLatestProject} latestProject={latestProject} img={FocalImg}/>
+            <Reviews reviews={reviews} loadingReview={loadingReview}/>
+            <FAQs faqArray={faqArray} loadingFaq={loadingFaq}  />
             <Partners header={"Partners"} />
-            <OurTeam />
+            <OurTeam team={team} loadingTeam={loadingTeam}  />
             <ContactUs />
         </div>
     )

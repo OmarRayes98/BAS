@@ -3,7 +3,7 @@ import './Accordion.css'
 
 
 const Accordion = ({ question, answer }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const toggleAccordion = () => {
     setVisible(!visible)
   }
