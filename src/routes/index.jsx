@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import LoginForm from "../pages/LoginForm/LoginForm";
 import ProfileCompany from "../pages/ProfileCompany";
 import StudyCase from "../pages/StudyCase/StudyCase";
+import AdminDashboard from "../pages/Dashboard/AdminDashboard/AdminDashboard";
 
 export const routes = [
     {
@@ -24,6 +25,10 @@ export const routes = [
           path: "profile-company/:id",
           element: <ProfileCompany />,
         },
+        {
+          path:"dashboard",
+          element: <AdminDashboard/>
+        }
       ],
     },
     {
