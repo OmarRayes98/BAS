@@ -3,7 +3,7 @@ import './WhoWeAre.css'
 
 const WhoWeAre = () => {
   return (
-    <div className='aj-who-we-are'>
+    <div className='aj-who-we-are' id='about'>
       <div className="aj-who-we-are-container">
         <SectionHeader title="Who we are" text="Our company offers a wide range of services including strategic consulting, public relations management, data analysis, and case studies. "/>
         <div className="aj-about-cards">

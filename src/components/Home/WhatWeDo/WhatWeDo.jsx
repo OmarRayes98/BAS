@@ -77,7 +77,7 @@ const WhatWeDo = () => {
   };
   
   return (
-    <div className='aj-what-we-do'>
+    <div className='aj-what-we-do' id='services'>
       <SectionHeader title="What we do" text="We deliver diverse range of services such as consulting, public relations...etc."/>
       <div>
         <Slider className='aj-large-slider' {...settings}>

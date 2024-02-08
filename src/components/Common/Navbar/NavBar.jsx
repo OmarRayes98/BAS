@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './NavBar.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ scrollToSection }) => {
   
   const [active, setActive] = useState("aj-sidebar");
   const [overlayActive, setOverlayActive] = useState("aj-overlay");
@@ -11,7 +11,6 @@ const NavBar = () => {
   const navToggle = () => {
     active === "aj-sidebar" ? setActive("aj-sidebar aj-sidebar-active") : setActive("aj-sidebar");
     overlayActive === "aj-overlay" ? setOverlayActive("aj-overlay aj-overlay-hidden") : setOverlayActive("aj-overlay");
-
   }
 
   const handleLogIn = ()=>{
@@ -22,15 +21,17 @@ const NavBar = () => {
     {
       name : "Home",
       active : true, 
-      path:"/"
+      path:"/",
     },
     {
       name : "About Us",
       active : false, 
+      id: "about",
     },
     {
       name : "Services",
       active : false, 
+      id: "services",
     },
     {
       name : "Case Studies",
@@ -40,8 +41,10 @@ const NavBar = () => {
     {
       name : "Contact Us",
       active : false, 
+      id: "contact",
     },
   ])
+  
   // Change nav color
   const [color, setColor] = useState(false);
   const changeColor = () => {
@@ -51,7 +54,6 @@ const NavBar = () => {
       setColor(false)
     }
   }
-
   window.addEventListener("scroll", changeColor)
 
   return (
@@ -72,7 +74,7 @@ const NavBar = () => {
             {
               navElements.map((el, index) => {
                 return <li key={index} className='aj-navbar-item'>
-                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-navlink-active' : 'aj-navlink'}>{el.name}</NavLink></li>
+                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-navlink-active' : 'aj-navlink'} onClick={() => scrollToSection(el.id)}>{el.name}</NavLink></li>
               })
             }
           </ul>
@@ -107,7 +109,7 @@ const NavBar = () => {
             {
               navElements.map((el, index) => {
                 return <li key={index} className={el.active? 'aj-navbar-item aj-sideli-active' : 'aj-navbar-item'}>
-                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-sidelink-active' : 'aj-navlink'}>{el.name}</NavLink></li>
+                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-sidelink-active' : 'aj-navlink'} onClick={() => scrollToSection(el.id)}>{el.name}</NavLink></li>
               })
             }
         </ul>

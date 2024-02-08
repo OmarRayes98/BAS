@@ -246,6 +246,9 @@
     display: none;
   }
 }
+.aj-latest-brand img {
+  width: 100%;
+}
 .aj-pagination {
   display: inline-flex;
   justify-content: center;
