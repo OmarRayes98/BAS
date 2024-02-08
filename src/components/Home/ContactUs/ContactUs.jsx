@@ -6,61 +6,8 @@ import { postContact } from '../../../redux/mainSlice/main.action'
 import { useMemo, useState } from 'react'
 
 const ContactUs = () => {
-
-  const fields={
-    serviceField:{headerid:'serviceId',headerTitle:'Services'},
-    emailField:{headerid:'emailId',headerTitle:'E-mail'},
-    positionField:{headerid:'positionId',headerTitle:'Position'},
-    nameField:{headerid:'nameId',headerTitle:'Name'},
-    companyNameField:{headerid:'companyId',headerTitle:'Company name'},
-    messageField:{headerid:'messageId',headerTitle:'Message'},
-    numberField:{headerid:'numberId',headerTitle:'Number (optional)'},
-  }
-  const initialFormContact = useMemo(() => ({
-    serviceId:"",
-    emailId:"",
-    positionId:"",
-    nameId:"",
-    companyId:"",
-    messageId:"",
-    numberId:0,
-  }), []);
-
-
-  const [formCotactState , setformCotactState] = useState(initialFormContact);
-
-  const dispatch = useDispatch();
-  // const {post,loadingConstact} = useSelector((state) => state.mainSlice);
-
-
-  const handleSubmit = ()=>{
-
-    //validation should be utils file and if error , not complited to invoke api 
-
-
-    //properies same nae of api's body 
-    let postObject ={
-      email:formCotactState.emailId,
-      position:formCotactState.positionId,
-      number:formCotactState.numberId,
-      message:formCotactState.messageId,
-      service:formCotactState.serviceId,
-      companyName:formCotactState.companyId,
-      name:formCotactState.nameId
-
-    }
-
-
-    dispatch(postContact(postObject));
-
-  }
-
-  const handleChangeInput =(field,value)=>{
-    setformCotactState((formCotactState)=>({...formCotactState, [field] : value }));  }
-
-
   return (
-    <div className='aj-contact-us'>
+    <div className='aj-contact-us' id='contact'>
       <SectionHeader title="Contact Us" text="Fill the form below to start your journey " />
       <form className="aj-contact-us-container">
         {/* === Row === */}
