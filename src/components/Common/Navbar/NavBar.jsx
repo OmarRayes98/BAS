@@ -109,7 +109,7 @@ const NavBar = ({ scrollToSection }) => {
             {
               navElements.map((el, index) => {
                 return <li key={index} className={el.active? 'aj-navbar-item aj-sideli-active' : 'aj-navbar-item'}>
-                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-sidelink-active' : 'aj-navlink'}>{el.name}</NavLink></li>
+                  <NavLink to={el?.path} className={el.active? 'aj-navlink aj-sidelink-active' : 'aj-navlink'} onClick={() => scrollToSection(el.id)}>{el.name}</NavLink></li>
               })
             }
         </ul>

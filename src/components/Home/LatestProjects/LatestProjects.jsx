@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const LatestProjects = ({title, titleInfo, text, username, img}) => {
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleNavigeDetails = (id)=>{
 
@@ -31,21 +31,6 @@ const LatestProjects = ({title, titleInfo, text, username, img}) => {
       username : "CEO name",
     },
   ])
-
-  // const arr = [
-  //   {
-  //     title : "Focal X Agency",
-  //     titleInfo : "Service provided: Consultancy",
-  //     text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  //     username : "Alaa Darwish",
-  //   },
-  //   {
-  //     title : "Work out",
-  //     titleInfo : "Service provided: Public relations",
-  //     text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  //     username : "CEO name",
-  //   },
-  // ]
 
   var settings = {
     dots: true,
