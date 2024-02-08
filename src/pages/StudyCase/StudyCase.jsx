@@ -28,6 +28,7 @@ const StudyCase = () => {
 
   const styleTitle ={
     alignItems:'center',
+    margin: '0px auto',
 
 
   }
@@ -41,7 +42,7 @@ const StudyCase = () => {
   }
 
   const styleHero= {
-    paddingLeft:'2rem'
+    paddingLeft:'0rem',
   }
   const [MenuProducts, setMenuProducts] = useState(ProductsData);
   const [currentFilter, setCurrentFilter] = useState('all');
