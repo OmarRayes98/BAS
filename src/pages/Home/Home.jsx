@@ -12,23 +12,18 @@ import Reviews from '../../components/Home/Reviews/Reviews'
 import FAQs from '../../components/Home/FAQs/FAQs'
 import OurTeam from '../../components/Home/OutTeam/OurTeam'
 import ContactUs from '../../components/Home/ContactUs/ContactUs'
-import { useDispatch, useSelector } from 'react-redux'
-import {fetchServices,fetchReviews,fetchFAQ,fetchTeam} from '../../redux/mainSlice/main.action';
-import { useEffect } from 'react'
-import { fetchProjects } from '../../redux/latestProject/latestProject.action'
 
 const Home = () => {
-
     return (
         <div className='home'>
             <Hero title="Black Analysis Solution" text="Leave it to us" heroImage={heroImage}/>
-            <WhatWeDo services={services} loadingService={loadingService} />
+            <WhatWeDo />
             <WhoWeAre />
-            <LatestProjects img={FocalImg}/>
+            <LatestProjects imgs={[FocalImg, WorkOutImg]}/>
             <Reviews />
             <FAQs />
             <Partners header={"Partners"} />
-            <OurTeam team={team} loadingTeam={loadingTeam}  />
+            <OurTeam />
             <ContactUs />
         </div>
     )

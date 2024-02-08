@@ -8,27 +8,10 @@ import {ProductsData} from './const';
 import { useState } from 'react';
 import { Fragment } from 'react';
 import SweetPagination from "sweetpagination";
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchCaseStuies } from '../../redux/caseStudySlice/caseStudy.action';
 const StudyCase = () => {
-
-
-  // const dispatch = useDispatch();
-  // const {caseStudy,loadingCaseStudy} = useSelector((state) => state.mainSlice);
-
-  // useEffect(()=>{
-
-  //     // dispatch(fetchCaseStuies());
-
-
-  // },[dispatch])
-
-
 
   const styleTitle ={
     alignItems:'center',
-    margin: '0px auto',
 
 
   }
@@ -42,7 +25,7 @@ const StudyCase = () => {
   }
 
   const styleHero= {
-    paddingLeft:'0rem',
+    paddingLeft:'2rem'
   }
   const [MenuProducts, setMenuProducts] = useState(ProductsData);
   const [currentFilter, setCurrentFilter] = useState('all');

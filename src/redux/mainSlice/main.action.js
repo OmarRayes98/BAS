@@ -1,71 +1,65 @@
 import { createAsyncThunk} from '@reduxjs/toolkit';
 import { axiosPublic } from '../../utils/api/axios';
 
-export const fetchServices = createAsyncThunk("main/fetchServices", async() =>{
+export const fetchCarusalImages = createAsyncThunk("main/fetchCarusalImages", async() =>{
 
 
-        const res = await axiosPublic(`/api/home/services`,{
+        const res = await axiosPublic(`/api/carouselsim`,{
             method:"Get",
         });
 
         const data= res.data.data;
 
-
         return data;
 
 });
 
-export const fetchReviews = createAsyncThunk("main/fetchReviews", async() =>{
+export const fetchCarusalTexts= createAsyncThunk("main/fetchCarusalTexts", async(lang) =>{
 
+    let last ;
 
-    const res = await axiosPublic(`/api/home/review`,{
+    if(lang==='en'){
+
+        last="carouselsen";
+
+    }else
+    {
+        last = "carouselsar"
+    }
+
+    const res = await axiosPublic(`/api/${lang}/${last}`,{
         method:"Get",
     });
 
     const data= res.data.data;
 
-
     return data;
 
 });
 
-export const fetchFAQ = createAsyncThunk("main/fetchFAQ", async() =>{
+export const fetchAboutTexts= createAsyncThunk("main/fetchAboutTexts", async(lang) =>{
 
-    const res = await axiosPublic(`/api/home/questions`,{
+
+
+    const res = await axiosPublic(`/api/${lang}/abouts`,{
         method:"Get",
     });
 
     const data= res.data.data;
 
-
     return data;
 
 });
 
-export const fetchTeam = createAsyncThunk("main/fetchTeam", async() =>{
+export const fetchNewsTexts= createAsyncThunk("main/fetchNewsTexts", async(lang) =>{
 
-    const res = await axiosPublic(`/api/home/members`,{
+    const res = await axiosPublic(`/api/${lang}/postslast`,{
         method:"Get",
     });
 
     const data= res.data.data;
 
-
     return data;
 
 });
 
-
-
-export const postContact = createAsyncThunk("main/postContact" , async(paramsObject)=>{
-
-        const res = await axiosPublic.post(`Fee_calculator/multi_calculate/`,paramsObject);
-
-        const data= res.data;
-
-        return data;
-
-    
-  
-    
-})

@@ -1,12 +1,13 @@
 import Slider from 'react-slick';
 import SectionHeader from '../SectionHeader/SectionHeader'
-
+import Img1 from './../../../assets/img/our-team1.png';
+import Img2 from './../../../assets/img/our-team2.png';
+import Img3 from './../../../assets/img/our-team3.png';
 import './OurTeam.css'
-import Loading from '../../Common/Loading/Loading';
 
 
 
-const OurTeam = ({team,loadingTeam}) => {
+const OurTeam = () => {
 
   var settings = {
     dots: false,
@@ -44,31 +45,37 @@ const OurTeam = ({team,loadingTeam}) => {
     ]
   };
 
-
   return (
-
     <div className='aj-our-team'>
       <SectionHeader title="Out Team" />
       <div className='aj-team-slider'>
-      {
-    loadingTeam ?
-    <Loading color={'white'} />
-        :
         <Slider {...settings}>
-
-          {
-            team.map((item,index)=>(
-              <div key={index} className='aj-team-slide'>
-              <img src={item.path} alt="team-member" />
-              <h3 className='aj-member-name'>{item.name}</h3>
-              <p className='aj-member-job'>{item.position}</p>
-            </div>
-            ))
-          }
-
-      </Slider>
-      }
-
+          <div className='aj-team-slide'>
+            <img src={Img1} alt="team-member" />
+            <h3 className='aj-member-name'>Louie</h3>
+            <p className='aj-member-job'>Graphic Designer</p>
+          </div>
+          <div className='aj-team-slide'>
+            <img src={Img2} alt="team-member" />
+            <h3 className='aj-member-name'>Louie</h3>
+            <p className='aj-member-job'>Graphic Designer</p>
+          </div>
+          <div className='aj-team-slide'>
+            <img src={Img3} alt="team-member" />
+            <h3 className='aj-member-name'>Layla</h3>
+            <p className='aj-member-job'>Financial Consultant</p>
+          </div>
+          <div className='aj-team-slide'>
+            <img src={Img1} alt="team-member" />
+            <h3 className='aj-member-name'>Adam</h3>
+            <p className='aj-member-job'>Public Relation Manager</p>
+          </div>
+          <div className='aj-team-slide'>
+            <img src={Img2} alt="team-member" />
+            <h3 className='aj-member-name'>Adam</h3>
+            <p className='aj-member-job'>Public Relation Manager</p>
+          </div>
+        </Slider>
       </div>
     </div>
   )

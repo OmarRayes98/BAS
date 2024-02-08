@@ -1,11 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux'
 import SectionHeader from '../SectionHeader/SectionHeader'
 import ContactInput from './ContactInput/ContactInput'
 import './ContactUs.css'
-import { postContact } from '../../../redux/mainSlice/main.action'
-import { useMemo, useState } from 'react'
 
 const ContactUs = () => {
+
   return (
     <div className='aj-contact-us' id='contact'>
       <SectionHeader title="Contact Us" text="Fill the form below to start your journey " />
@@ -13,9 +11,6 @@ const ContactUs = () => {
         {/* === Row === */}
         <div className="aj-contact-email-row">
           <ContactInput 
-          handleChangeInput={handleChangeInput}
-          value={""}
-          field={""}
             title="Services" 
             placeholder="Choose the service you need." 
             svg={<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -35,17 +30,11 @@ const ContactUs = () => {
             title="Company name" 
             placeholder="Enter your company name"
             type="text"
-            handleChangeInput={handleChangeInput}
-            value={""}
-            field={""}
             />
           <ContactInput 
             title="Number (optional)" 
             placeholder="Enter your number"
             type="number"
-            handleChangeInput={handleChangeInput}
-            value={""}
-            field={""}
             />
         </div>
         {/* === Row === */}
@@ -54,17 +43,11 @@ const ContactUs = () => {
             title="E-mail" 
             placeholder="Enter your work E-mail"
             type="email"
-            handleChangeInput={handleChangeInput}
-            value={""}
-            field={""}
             />
           <ContactInput 
             title="Position" 
             placeholder="Enter your position in the company"
             type="text"
-            handleChangeInput={handleChangeInput}
-            value={""}
-            field={""}
             />
         </div>
         <div className="aj-contact-textarea">
@@ -80,12 +63,10 @@ const ContactUs = () => {
                   </clipPath>
                 </defs>
               </svg>
-            <textarea 
-
-                       name="" id="" placeholder='Enter your message'></textarea>
+            <textarea name="" id="" placeholder='Enter your message'></textarea>
             </div>
         </div>
-        <input onClick={handleSubmit} type='submit' className='aj-contact-btn' value="Send" />
+        <input type='submit' className='aj-contact-btn' value="Send" />
       </form>
     </div>
   )

@@ -1,33 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchServices ,fetchReviews,fetchFAQ ,fetchTeam,postContact} from './main.action';
+import { fetchCarusalImages  , fetchCarusalTexts ,fetchAboutTexts , fetchNewsTexts} from './main.action';
 
 
 const initialState = {
 
-    // carusalImages:[],
-    // carusalText:{
-    // },
-    // aboutText:{
-    // },
+    carusalImages:[],
+    carusalText:{
+    },
+    aboutText:{
+    },
 
-    // news:{
-    // },
+    news:{
+    },
 
-    // loadingImages :false,
-    // loadingTexts :false,
-    services:[],
-    loadingService:false,
-    reviews:[],
-    loadingReview:false,
-    faqArray:[],
-    loadingFaq:false,
-    team:[],
-    loadingTeam:false,
-
-    post:{},
-    loadingConstact:false,
-
-
+    loadingImages :false,
+    loadingTexts :false,
 
 }
 
@@ -41,91 +28,61 @@ const mainSlice = createSlice({
 
     extraReducers: (builder)=> {
 
-        builder.addCase(fetchServices.pending, (state)=>{
-            state.loadingService =true;
+        builder.addCase(fetchCarusalImages.pending, (state)=>{
+            state.loadingImages =true;
 
         });
 
-        builder.addCase(fetchServices.fulfilled, (state,action)=>{
+        builder.addCase(fetchCarusalImages.fulfilled, (state,action)=>{
 
-            state.services=  action.payload;
+            state.carusalImages=  action.payload;
                 
-            state.loadingService =false;
+            state.loadingImages =false;
         });
 
-        builder.addCase(fetchServices.rejected, (state)=>{
-            state.loadingService =false;
-            state.services = []
+        builder.addCase(fetchCarusalImages.rejected, (state)=>{
+            state.loadingImages =false;
+            state.carusalImages = []
         });
 
-
-        builder.addCase(fetchReviews.pending, (state)=>{
-            state.loadingReview =true;
+        builder.addCase(fetchCarusalTexts.pending, (state)=>{
+            state.loadingTexts =true;
 
         });
 
-        builder.addCase(fetchReviews.fulfilled, (state,action)=>{
+        builder.addCase(fetchCarusalTexts.fulfilled, (state,action)=>{
+            
+            // state.carusalText=  {...action.payload};
+            state.carusalText= {...state.carusalText ,[action.meta.arg]:action.payload};
 
-            state.reviews=  action.payload;
-                
-            state.loadingReview =false;
+
+
+            state.loadingTexts =false;
         });
 
-        builder.addCase(fetchReviews.rejected, (state)=>{
-            state.loadingReview =false;
-            state.reviews = []
+        builder.addCase(fetchCarusalTexts.rejected, (state)=>{
+            state.loadingTexts =false;
+            state.carusalText = {}
         });
 
-
-        builder.addCase(fetchFAQ.pending, (state)=>{
-            state.loadingFaq =true;
+        builder.addCase(fetchAboutTexts.fulfilled, (state,action)=>{
+            
+            // state.carusalText=  {...action.payload};
+            state.aboutText= {...state.aboutText ,[action.meta.arg]:action.payload};
         });
 
-        builder.addCase(fetchFAQ.fulfilled, (state,action)=>{
-
-            state.faqArray=  action.payload;
-                
-            state.loadingFaq =false;
+        builder.addCase(fetchAboutTexts.rejected, (state)=>{
+            state.aboutText = {}
         });
 
-        builder.addCase(fetchFAQ.rejected, (state)=>{
-            state.loadingFaq =false;
-            state.faqArray = []
+        builder.addCase(fetchNewsTexts.fulfilled, (state,action)=>{
+            
+            state.news= {...state.news ,[action.meta.arg]:action.payload};
         });
 
-
-        builder.addCase(fetchTeam.pending, (state)=>{
-            state.loadingTeam =true;
+        builder.addCase(fetchNewsTexts.rejected, (state)=>{
+            state.news = {}
         });
-
-        builder.addCase(fetchTeam.fulfilled, (state,action)=>{
-
-            state.team=  action.payload;
-                
-            state.loadingTeam =false;
-        });
-
-        builder.addCase(fetchTeam.rejected, (state)=>{
-            state.loadingTeam =false;
-            state.team = []
-        });
-
-        builder.addCase(postContact.pending, (state)=>{
-            state.loadingConstact =true;
-        });
-
-        builder.addCase(postContact.fulfilled, (state,action)=>{
-
-            state.post=  action.payload;
-                
-            state.loadingConstact =false;
-        });
-
-        builder.addCase(postContact.rejected, (state)=>{
-            state.loadingConstact =false;
-            state.post = {}
-        });
-
 
     }
 

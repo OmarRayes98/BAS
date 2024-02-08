@@ -1,9 +1,8 @@
-import Loading from '../../Common/Loading/Loading'
 import SectionHeader from '../SectionHeader/SectionHeader'
 import Accordion from './Accordion/Accordion'
 import './FAQs.css'
 
-const FAQs = ({faqArray,loadingFaq}) => {
+const FAQs = () => {
   const accordionData = [
     {
       id: 1,
@@ -73,22 +72,16 @@ const FAQs = ({faqArray,loadingFaq}) => {
     },
   ]
   const renderSections = () => {
-    return faqArray.map((section) => {
+    return accordionData.map((section) => {
       return <Accordion key={section.id} question={section.question} answer={section.answer} id={section.id}/>
     })
   }
   return (
     <div className='aj-faqs'>
       <SectionHeader title="FAQs" text="Here are the highlight of the repeated questions that we keep on getting" />
-      {
-        loadingFaq ?
-        <Loading/>
-        :
-      
       <div className="aj-accordions">
         { renderSections() }
       </div>
-      }
     </div>
   )
 }
