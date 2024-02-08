@@ -13,7 +13,6 @@ import OurTeam from '../../components/Home/OutTeam/OurTeam'
 import ContactUs from '../../components/Home/ContactUs/ContactUs'
 
 const Home = () => {
-
     return (
         <div className='home'>
             <Hero title="Black Analysis Solution" text="Leave it to us" heroImage={heroImage}/>
@@ -27,8 +26,6 @@ const Home = () => {
             <ContactUs />
         </div>
     )
-
-
 }
 
 export default Home

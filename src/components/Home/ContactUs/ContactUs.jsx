@@ -3,8 +3,9 @@ import ContactInput from './ContactInput/ContactInput'
 import './ContactUs.css'
 
 const ContactUs = () => {
+
   return (
-    <div className='aj-contact-us'>
+    <div className='aj-contact-us' id='contact'>
       <SectionHeader title="Contact Us" text="Fill the form below to start your journey " />
       <form className="aj-contact-us-container">
         {/* === Row === */}
